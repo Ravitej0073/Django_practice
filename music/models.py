@@ -22,7 +22,7 @@ class Song(models.Model):
 
 # After any changes in models file. 2 steps will replicate changes
 # 1. Make migrate app - python manage.py makemigrations music
-# 2. Actual migrate - python manage.py migrate
+# 2. Actual migrate - python manage.py migrate.
 
 
 
