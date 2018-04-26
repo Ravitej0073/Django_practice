@@ -19,8 +19,23 @@ def index(request):
 def details(request,album_id):
     # return HttpResponse("<h2>Details for Album id {}</h2>".format(album_id))
 
-    album=get_object_or_404(Album,pk=album_id)
+    album = get_object_or_404(Album,pk=album_id)
     return render(request,'music/details.html',{'album':album})
+
+
+def favourite(request,album_id):
+    # return HttpResponse("<h2>Details for Album id {}</h2>".format(album_id))
+
+    album = get_object_or_404(Album,pk=album_id)
+
+    try:
+        selected_song = album.song_set.get(pk=request.POST['song'])
+    except:
+        pass
+    else:
+        selected_song.is_favourite = True
+        selected_song.save()
+        return render(request,'music/details.html',{'album':album})
 
 
 
