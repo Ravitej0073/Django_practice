@@ -2,7 +2,7 @@ from django.conf.urls import url,include
 from django.contrib import admin
 
 
-# Add new URL patterns
+# Add new URL pattern for any new url specified
 
 
 urlpatterns = [
